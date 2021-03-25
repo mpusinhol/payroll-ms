@@ -44,7 +44,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 		clients
 			.inMemory()
-			.withClient(clientSecret)
+			.withClient(clientName)
 			.secret(bCryptPasswordEncoder.encode(clientSecret))
 			.scopes("read", "write")
 			.authorizedGrantTypes("password")
